@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { CustomePipe } from "../customepipe/custompipe";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ImageCropperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
