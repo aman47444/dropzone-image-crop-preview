@@ -13,10 +13,12 @@
     .detailsHeading {
       font-size: 20px;
       font-weight: bold;
+      color: #666;
     }
 
     .detailValue {
-      font-size: 15px;
+      font-size: 20px;
+      font-weight: bold;
     }
   }
 }
@@ -38,11 +40,14 @@
     background-color: rgb(250, 250, 255);
 
     .uploadIcon {
-      display: flex;
       position: absolute;
       top: 45%;
       left: 20%;
       align-items: center;
+
+      .supportFormate {
+        color: darkgray;
+      }
 
       label {
         margin-left: 10px;
