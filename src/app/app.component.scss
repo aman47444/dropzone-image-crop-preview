@@ -21,6 +21,38 @@
       font-weight: bold;
     }
   }
+
+  .detailOfImageName {
+    max-width: 75%;
+    font-size: 18px;
+    font-weight: 700;
+    display: inline-flex;
+    flex-wrap: nowrap;
+
+    .headingStyle {
+      font-size: 25px;
+      font-weight: 500;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .detailOfImageName {
+      max-width: 60%;
+      display: inline-flex;
+      flex-wrap: nowrap;
+    }
+  }
+  .detailOfImageName > div:first-child {
+    flex: 0 1 auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .detailOfImageName > div + div {
+    flex: 1 0 auto;
+    white-space: nowrap;
+  }
 }
 
 .uploadButton {

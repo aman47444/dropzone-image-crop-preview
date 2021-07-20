@@ -4,11 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { CustomePipe } from "../customepipe/custompipe";
+import { StringEllipsisPipe } from "../customepipe/elipsispipe";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomePipe
+    CustomePipe,
+    StringEllipsisPipe
   ],
   imports: [
     BrowserModule,
