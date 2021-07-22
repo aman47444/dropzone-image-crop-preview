@@ -17,12 +17,13 @@ export class AppComponent {
   showCropper = false;
   disable = false;
   isSave = false;
-  trunkFileName = ''
+  trunkFileName = '';
+  images: any = [];
 
   fileChangeEvent(event: any): void {
     this.imageChangedEvent = event;
     this.file = event.target.files[0].name;
-    this.trunkFileName = this.file.substring(this.file.length - 7)
+    this.trunkFileName = this.file.substring(this.file.length - 7);
   }
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
@@ -38,6 +39,11 @@ export class AppComponent {
   loadImageFailed() {}
 
   save() {
+    this.images.push({
+      imageName: this.file,
+      imageSrc: this.croppedImage,
+      imageTrunkFileName: this.trunkFileName,
+    });
     this.isSave = true;
   }
 }

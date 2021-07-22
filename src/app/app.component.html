@@ -1,7 +1,7 @@
 <div class="uploadButton text-center">
   <p>
-    Click on the Upload Image and then you will get modal pop up. there you can
-    crop your image. and after save changes you will get all the details of your
+    Click on the Upload Image Button and then you will get modal pop up. there you can upload image and
+    can crop the image. and after save changes you will get all the images and name of your
     image
   </p>
   <button
@@ -9,22 +9,25 @@
     class="btn btn-primary"
     data-toggle="modal"
     data-target="#exampleModalCenter"
+    (click)="fileChangeEvent(false)"
   >
     Upload Image
   </button>
 </div>
 
-<div class="detailsImages" *ngIf="imageChangedEvent && isSave">
-  <img [src]="croppedImage" alt="Card image cap" />
-  <div class="headingStyle">File Name: </div>
-  <!-- Older Assignment task  -->
-  <!-- <div class="details">
+<div class="detailsImages mb-3" *ngFor="let img of images">
+  <div *ngIf="imageChangedEvent && isSave">
+    <img [src]="img.imageSrc" alt="Card image cap" />
+    <div class="headingStyle">File Name:</div>
+    <!-- Older Assignment task  -->
+    <!-- <div class="details">
     <span class="detailsHeading">Image name:</span>
     <span class="detailValue"> {{ file | ellipsis }}</span><br />
   </div> -->
-  <div class="detailOfImageName">
-    <div>{{file | stringEllipsis}}</div>
-    <div>{{trunkFileName}}</div>
+    <div class="detailOfImageName">
+      <div>{{ img.imageName | stringEllipsis }}</div>
+      <div>{{ img.imageTrunkFileName }}</div>
+    </div>
   </div>
 </div>
 
