@@ -19,13 +19,8 @@
   <div *ngIf="imageChangedEvent && isSave">
     <img [src]="img.imageSrc" alt="Card image cap" />
     <div class="headingStyle">File Name:</div>
-    <!-- Older Assignment task  -->
-    <!-- <div class="details">
-    <span class="detailsHeading">Image name:</span>
-    <span class="detailValue"> {{ file | ellipsis }}</span><br />
-  </div> -->
     <div class="detailOfImageName">
-      <div>{{ img.imageName | stringEllipsis }}</div>
+      <div>{{ img.imageName }}</div>
       <div>{{ img.imageTrunkFileName }}</div>
     </div>
   </div>

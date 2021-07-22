@@ -19,12 +19,14 @@ export class AppComponent {
   isSave = false;
   trunkFileName = '';
   images: any = [];
+  firstFileName = ''
 
   fileChangeEvent(event: any): void {
     this.imageChangedEvent = event;
     this.file = event.target.files[0].name;
-    this.trunkFileName = this.file.substring(this.file.length - 7);
+    this.setImageName(this.file);
   }
+
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
   }
@@ -38,9 +40,14 @@ export class AppComponent {
   }
   loadImageFailed() {}
 
+  setImageName(file: any) {
+    this.firstFileName = file.substring(0, file.length-7);
+    this.trunkFileName = file.substring(file.length - 7);
+  }
+
   save() {
     this.images.push({
-      imageName: this.file,
+      imageName: this.firstFileName,
       imageSrc: this.croppedImage,
       imageTrunkFileName: this.trunkFileName,
     });
